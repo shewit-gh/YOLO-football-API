@@ -241,6 +241,46 @@ function manunited(){
     console.log(err);
 });
 }
+function newunited(){
+    button .innerHTML= `<i class="fas fa-chevron-circle-down down" role="button" style = "color:#22b1ff;"></i>`
+    fetch("https://football-web-pages1.p.rapidapi.com/fixtures-results.json?comp=1&team=15", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "fba5883b82msh26a5be4a9c98ee9p1fc9c4jsn88bf1d0faf3a",
+            "x-rapidapi-host": "football-web-pages1.p.rapidapi.com"
+        }
+    })
+.then(response => response.json().then(data => {doThis(data)})).catch(err => {
+    console.log(err);
+});
+}
+function sheffield(){
+    button .innerHTML= `<i class="fas fa-chevron-circle-down down" role="button" style = "color:#F12228;"></i>`
+    fetch("https://football-web-pages1.p.rapidapi.com/fixtures-results.json?comp=1&round=1&team=38", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "fba5883b82msh26a5be4a9c98ee9p1fc9c4jsn88bf1d0faf3a",
+            "x-rapidapi-host": "football-web-pages1.p.rapidapi.com"
+        }
+    })
+.then(response => response.json().then(data => {doThis(data)})).catch(err => {
+    console.log(err);
+});
+}
+function southampton(){
+    button .innerHTML= `<i class="fas fa-chevron-circle-down down" role="button" style = "color:#d71920;"></i>`
+    fetch("https://football-web-pages1.p.rapidapi.com/fixtures-results.json?comp=1&team=18", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "fba5883b82msh26a5be4a9c98ee9p1fc9c4jsn88bf1d0faf3a",
+            "x-rapidapi-host": "football-web-pages1.p.rapidapi.com"
+        }
+    })
+.then(response => response.json().then(data => {doThis(data)})).catch(err => {
+    console.log(err);
+});
+}
+
 
 
 
