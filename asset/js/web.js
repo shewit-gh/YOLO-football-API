@@ -189,6 +189,59 @@ function leeds(){
     console.log(err);
 });
 }
+function leicester(){
+    button .innerHTML= `<i class="fas fa-chevron-circle-down down" role="button" style = "color:#152F7B;"></i>`
+    fetch("https://football-web-pages1.p.rapidapi.com/fixtures-results.json?comp=1&round=1&team=30", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "fba5883b82msh26a5be4a9c98ee9p1fc9c4jsn88bf1d0faf3a",
+            "x-rapidapi-host": "football-web-pages1.p.rapidapi.com"
+        }
+    })
+.then(response => response.json().then(data => {doThis(data)})).catch(err => {
+    console.log(err);
+});
+}
+function liverpool(){
+    button .innerHTML= `<i class="fas fa-chevron-circle-down down" role="button" style = "color:#d3171e;"></i>`
+    fetch("https://football-web-pages1.p.rapidapi.com/fixtures-results.json?comp=1&team=11", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "fba5883b82msh26a5be4a9c98ee9p1fc9c4jsn88bf1d0faf3a",
+            "x-rapidapi-host": "football-web-pages1.p.rapidapi.com"
+        }
+    })
+.then(response => response.json().then(data => {doThis(data)})).catch(err => {
+    console.log(err);
+});
+}
+function mancity(){
+    button .innerHTML= `<i class="fas fa-chevron-circle-down down" role="button" style = "color:#202124;"></i>`
+    fetch("https://football-web-pages1.p.rapidapi.com/fixtures-results.json?comp=1&team=12", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "fba5883b82msh26a5be4a9c98ee9p1fc9c4jsn88bf1d0faf3a",
+            "x-rapidapi-host": "football-web-pages1.p.rapidapi.com"
+        }
+    })
+.then(response => response.json().then(data => {doThis(data)})).catch(err => {
+    console.log(err);
+});
+}
+function manunited(){
+    button .innerHTML= `<i class="fas fa-chevron-circle-down down" role="button" style = "color:#d20222;"></i>`
+    fetch("https://football-web-pages1.p.rapidapi.com/fixtures-results.json?comp=1&team=15", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "fba5883b82msh26a5be4a9c98ee9p1fc9c4jsn88bf1d0faf3a",
+            "x-rapidapi-host": "football-web-pages1.p.rapidapi.com"
+        }
+    })
+.then(response => response.json().then(data => {doThis(data)})).catch(err => {
+    console.log(err);
+});
+}
+
 
 
 
