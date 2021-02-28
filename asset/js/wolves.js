@@ -29,27 +29,27 @@ function addMatchTile(data){
     bigcontainer.appendChild(empty)
     bigcontainer.appendChild(ft)
 
-    
+    //creating the home match box
     var bigcontainer2 = document.createElement('div')
     bigcontainer2.classList.add("bigcontainer2")
     var homeTeam = document.createElement('div');
     homeTeam.classList.add("team");
- 
+    //creating the image and the text
     var homeTileTeamName = document.createElement('p');
     homeTileTeamName.innerHTML = data['home-team'].name;
-    
+ 
     homeTeam.appendChild(homeTileTeamName);
 
     var awayTeam = document.createElement('div');
     awayTeam.classList.add("team");
     
-    
+    //creating the image and the text
     var awayTileTeamName = document.createElement('p');
     awayTileTeamName.innerHTML =  data['away-team'].name;
  
     awayTeam.appendChild(awayTileTeamName);
 
-   
+    //createing the score
     var score = document.createElement('p');
     score.innerHTML = data['home-team'].score + " - " + data['away-team'].score;
     var bigcontainer3 = document.createElement('div')
@@ -64,6 +64,7 @@ function addMatchTile(data){
     date.appendChild(date1);
     bigcontainer3.appendChild(empty1)
     bigcontainer3.appendChild(date)
+    
     
     bigcontainer2.appendChild(homeTeam);
     bigcontainer2.appendChild(score);
@@ -82,12 +83,12 @@ function addMatchTile(data){
 }
 
 //fetching the data
-fetch("https://football-web-pages1.p.rapidapi.com/fixtures-results.json?comp=1&round=1&team=38", {
-    "method": "GET",
-    "headers": {
-        "x-rapidapi-key": "fba5883b82msh26a5be4a9c98ee9p1fc9c4jsn88bf1d0faf3a",
-        "x-rapidapi-host": "football-web-pages1.p.rapidapi.com"
-    }
+fetch("https://football-web-pages1.p.rapidapi.com/fixtures-results.json?comp=1&round=1&team=2", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "fba5883b82msh26a5be4a9c98ee9p1fc9c4jsn88bf1d0faf3a",
+		"x-rapidapi-host": "football-web-pages1.p.rapidapi.com"
+	}
 })
 .then(response => response.json().then(data => {
     var today = new Date();
@@ -97,21 +98,23 @@ fetch("https://football-web-pages1.p.rapidapi.com/fixtures-results.json?comp=1&r
     today = yyy + '-' + mm + '-' + dd;
     console.log(data);
     console.log(today);
+
 var button = document.createElement("button");
 button.classList.add("button");
-
+// button.innerHTML = "See upcoming fixtures"
 button.style.borderStyle = 'none';
 button.style.cursor = "pointer";
 button.style.background="inherit"
 
 
-
+// matchTable.appendChild(button);
  button .innerHTML= `  
 <i class="fas fa-chevron-circle-down down" role="button" style = "color:#490024;"></i>
 
 `
 button.addEventListener('click', function(){ 
     for(var i = 0; i<data['fixtures-results'].matches.length;i++){
+        
         
             if(data['fixtures-results'].matches[i]['competition'].name !== 'Premier League'){
                 continue;
@@ -132,7 +135,7 @@ button.addEventListener('click', function(){
             continue;
         }
         else if (data['fixtures-results'].matches[i].date > today){
-        
+           
           matchTable.appendChild(button);
           
             break;

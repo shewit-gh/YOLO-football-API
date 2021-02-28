@@ -113,12 +113,6 @@ fetch("https://football-web-pages1.p.rapidapi.com/fixtures-results.json?comp=1&r
 `
         button.addEventListener('click', function () {
             for (var i = 0; i < data['fixtures-results'].matches.length; i++) {
-                var today = new Date();
-                var dd = String(today.getDate()).padStart(2, '0');
-                var mm = String(today.getMonth() + 1).padStart(2, '0');
-                var yyy = today.getFullYear();
-                today = yyy + '-' + mm + '-' + dd;
-
                 if (data['fixtures-results'].matches[i]['competition'].name !== 'Premier League') {
                     continue;
                 }
@@ -133,11 +127,6 @@ fetch("https://football-web-pages1.p.rapidapi.com/fixtures-results.json?comp=1&r
             button.style.display = 'none'
         });
         for (var i = 0; i < data['fixtures-results'].matches.length; i++) {
-            var today = new Date();
-            var dd = String(today.getDate()).padStart(2, '0');
-            var mm = String(today.getMonth() + 1).padStart(2, '0');
-            var yyy = today.getFullYear();
-            today = yyy + '-' + mm + '-' + dd;
 
             if (data['fixtures-results'].matches[i]['competition'].name !== 'Premier League') {
                 continue;
