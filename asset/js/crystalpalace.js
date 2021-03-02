@@ -8,9 +8,9 @@ var lastMatchGoal = document.querySelector("#goals");
 var matchTable = document.querySelector("#matchTable");
 
 
-
+//the functions to create an element
 function addMatchTile(data) {
-
+    //createing the tile div
 
 
     var matchtile = document.createElement('div');
@@ -29,7 +29,7 @@ function addMatchTile(data) {
     bigcontainer.appendChild(empty)
     bigcontainer.appendChild(ft)
 
-    //creating the home match box
+
     var bigcontainer2 = document.createElement('div')
     bigcontainer2.classList.add("bigcontainer2")
     var homeTeam = document.createElement('div');
@@ -43,7 +43,7 @@ function addMatchTile(data) {
     var awayTeam = document.createElement('div');
     awayTeam.classList.add("team");
 
-
+    //creating the image and the text
     var awayTileTeamName = document.createElement('p');
     awayTileTeamName.innerHTML = data['away-team'].name;
 
@@ -84,7 +84,7 @@ function addMatchTile(data) {
 }
 
 //fetching the data
-fetch("https://football-web-pages1.p.rapidapi.com/fixtures-results.json?comp=1&round=1&team=1", {
+fetch("https://football-web-pages1.p.rapidapi.com/fixtures-results.json?comp=1&team=8", {
     "method": "GET",
     "headers": {
         "x-rapidapi-key": "fba5883b82msh26a5be4a9c98ee9p1fc9c4jsn88bf1d0faf3a",
@@ -100,16 +100,16 @@ fetch("https://football-web-pages1.p.rapidapi.com/fixtures-results.json?comp=1&r
         console.log(data);
         console.log(today);
 
-        var button = document.createElement("button");
         button.classList.add("button");
-        // button.innerHTML = "See upcoming fixtures"
+
         button.style.borderStyle = 'none';
         button.style.cursor = "pointer";
         button.style.background = "inherit"
 
-        // matchTable.appendChild(button);
+
+
         button.innerHTML = `  
-<i class="fas fa-chevron-circle-down down" role="button"></i>
+<i class="fas fa-chevron-circle-down down" role="button" style = "color:#0055a5;"></i>
 
 `
         button.addEventListener('click', function () {
