@@ -110,11 +110,6 @@ button.style.background="inherit"
 `
 button.addEventListener('click', function(){ 
     for(var i = 0; i<data['fixtures-results'].matches.length;i++){
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0'); 
-        var yyy = today.getFullYear();
-        today = yyy + '-' + mm + '-' + dd;
         
             if(data['fixtures-results'].matches[i]['competition'].name !== 'Premier League'){
                 continue;
@@ -130,30 +125,12 @@ button.addEventListener('click', function(){
     button.style.display = 'none'
 });
    for(var i = 0; i<data['fixtures-results'].matches.length;i++){
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); 
-    var yyy = today.getFullYear();
-    today = yyy + '-' + mm + '-' + dd;
     
         if(data['fixtures-results'].matches[i]['competition'].name !== 'Premier League'){
             continue;
         }
         else if (data['fixtures-results'].matches[i].date > today){
-            // console.log(data['fixtures-results'].matches[i].date > date.getDate())
             
-            // var button = document.createElement('button');
-            // button.classList.add("button");
-            // button.style.borderStyle = 'none';
-            // button.style.cursor = "pointer"
-            
-            // button.innerHTML = "See upcoming fixtures"
-            
-            // matchTable.appendChild(button);
-        //      button.innerHTML = `  
-        //     <i class="fas fa-chevron-circle-down down" role="button"></i>
-      
-        //  `
           matchTable.appendChild(button);
           
             break;
